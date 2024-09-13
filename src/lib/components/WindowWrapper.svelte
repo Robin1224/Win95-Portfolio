@@ -5,8 +5,6 @@
   export let left = $openWindows[index].position.x;
   export let top = $openWindows[index].position.y;
 
-  let maxIndex = $openWindows;
-
   let moving = false;
 
   function changeFocus() {
