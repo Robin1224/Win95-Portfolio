@@ -4,11 +4,13 @@
 </script>
 
 {#each $openWindows as window, index}
-    {#if window.visible}
-      {#if window.component}
-      <WindowWrapper index={index} >
+  {#if window.visible}
+    {#if window.component}
+      <WindowWrapper {index} >
         <svelte:component this={window.component} />
       </WindowWrapper>
-      {/if}
     {/if}
-  {/each}
+  {/if}
+{/each}
+
+{(console.log({ $openWindows }), '')}

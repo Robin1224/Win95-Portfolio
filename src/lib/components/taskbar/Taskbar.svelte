@@ -10,9 +10,7 @@
     <span class="bold">Start</span>
   </div>
   {#each $openWindows as window, index}
-    {#if window.visible}
-      <TaskbarItem {index} />
-    {/if}
+    <TaskbarItem {index} />
   {/each}
 </div>
 

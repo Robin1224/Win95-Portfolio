@@ -2,6 +2,7 @@
   --desktop-bg: #008080;
   --window-bg: #c0c0c0;
   --window-accent: #808080;
+  --window-unfocused: #7F787F;
   --window-titlebar: #000082;
 
   --path-border-default: url(./borders/border-image.png);
@@ -32,4 +33,13 @@ body {
   text-shadow: 0.5px 0px black, 1.5px 0px black;
   color: transparent;
   letter-spacing: 1px;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

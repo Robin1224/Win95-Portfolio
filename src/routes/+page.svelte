@@ -13,6 +13,7 @@
 <style>
   div {
     cursor: url("/cursors/arrow.png"), auto;
+    overflow: hidden;
     position: relative;
     max-width: 1020px;
     max-height: 660px;
