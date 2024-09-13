@@ -5,17 +5,32 @@
   export let left = $openWindows[index].position.x;
   export let top = $openWindows[index].position.y;
 
+  let maxIndex = $openWindows;
+
   let moving = false;
 
-  // function changeFocus() {
-  //   openWindows.update((windows) => {
-  //     if (index >= 0 && index < windows.length) {
-  //       const [window] = windows.splice(index, 1); // Remove the window at the specified index
-  //       windows.push(window); // Add the removed window to the end of the array
-  //     }
-  //     return windows;
-  //   });
-  // }
+  function changeFocus() {
+    openWindows.update((windows) => {
+      let highestZIndex = 0;
+      windows.forEach((window) => {
+        if (window.zIndex > highestZIndex) {
+          highestZIndex = window.zIndex;
+        }
+      });
+
+      windows.forEach((window, i) => {
+        if (i === index) {
+          if (window.zIndex !== highestZIndex) {
+            window.focused = true;
+            window.zIndex = highestZIndex + 1;
+          }
+        } else {
+          window.focused = false;
+        }
+      });
+      return windows;
+    });
+  }
 
   function onMouseDown() {
     moving = true;
@@ -56,10 +71,11 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <section
-  style="--index: {index}; --position-x: {`${top}px`}; --position-y: {`${left}px`}"
+  style="--z-index: {$openWindows[index].zIndex}; --position-x: {top}px; --position-y: {left}px"
   tabindex={index}
+  on:mousedown={changeFocus}
 >
-  <div class="window-titlebar" on:mousedown={onMouseDown}>
+  <div class="window-titlebar {$openWindows[index].focused ? 'focused' : ''}" on:mousedown={onMouseDown} >
     <img src={$openWindows[index].icon} alt="Window icon" />
     <h2 class="unselectable bold">{$openWindows[index].title}</h2>
     <button on:click={minimiseWindow}>_</button>
@@ -79,16 +95,20 @@
     border-width: 4px;
     border-image-slice: 4;
     border-image-repeat: round;
-    z-index: var(--index);
+    z-index: var(--z-index);
     resize: auto;
   }
 
   section > div {
     display: flex;
-    background-color: var(--window-titlebar);
+    background-color: var(--window-unfocused);
     margin: 2px;
     height: 1.6em;
     align-items: center;
+  }
+
+  .focused {
+    background-color: var(--window-titlebar);
   }
 
   img {
@@ -100,6 +120,10 @@
     font-size: 1rem;
     margin-left: 3px;
     /* color: white; */
+    --bold-color: #c0c0c0;
+  }
+
+  .focused h2 {
     --bold-color: white;
   }
 </style>

@@ -13,6 +13,8 @@ export const openWindows = writable([
     title: "My Computer",
     visible: true,
     position: { x: 100, y: 100 },
+    focused: true,
+    zIndex: 1,
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ export const openWindows = writable([
     title: "CD Player",
     visible: true,
     position: { x: 130, y: 130 },
+    focused: false,
+    zIndex: 2,
   },
   {
     id: 3,
@@ -29,5 +33,7 @@ export const openWindows = writable([
     title: "Test Window3",
     visible: true,
     position: { x: 160, y: 160 },
+    focused: false,
+    zIndex: 3,
   },
 ]);

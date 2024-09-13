@@ -15,7 +15,4 @@
   {/each}
 </div>
 
-{(console.log({ $openWindows }), "")}
-
-<style>
-</style>
+<!-- {(console.log({ $openWindows }), "")} -->

@@ -22,7 +22,6 @@
     padding-right: 5px;
     max-width: 10em;
     margin-right: 0.3em;
-    
   }
 
   img {
