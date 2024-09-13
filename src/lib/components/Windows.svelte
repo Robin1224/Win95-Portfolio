@@ -3,14 +3,19 @@
   import WindowWrapper from "./WindowWrapper.svelte";
 </script>
 
-{#each $openWindows as window, index}
-  {#if window.visible}
-    {#if window.component}
-      <WindowWrapper {index} >
-        <svelte:component this={window.component} />
-      </WindowWrapper>
+<div class="windows-wrapper">
+  {#each $openWindows as window, index}
+    {#if window.visible}
+      {#if window.component}
+        <WindowWrapper {index}>
+          <svelte:component this={window.component} />
+        </WindowWrapper>
+      {/if}
     {/if}
-  {/if}
-{/each}
+  {/each}
+</div>
 
-{(console.log({ $openWindows }), '')}
+{(console.log({ $openWindows }), "")}
+
+<style>
+</style>

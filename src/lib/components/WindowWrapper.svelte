@@ -7,15 +7,15 @@
 
   let moving = false;
 
-  function changeFocus() {
-    openWindows.update((windows) => {
-      if (index >= 0 && index < windows.length) {
-        const [window] = windows.splice(index, 1); // Remove the window at the specified index
-        windows.push(window); // Add the removed window to the end of the array
-      }
-      return windows;
-    });
-  }
+  // function changeFocus() {
+  //   openWindows.update((windows) => {
+  //     if (index >= 0 && index < windows.length) {
+  //       const [window] = windows.splice(index, 1); // Remove the window at the specified index
+  //       windows.push(window); // Add the removed window to the end of the array
+  //     }
+  //     return windows;
+  //   });
+  // }
 
   function onMouseDown() {
     moving = true;
@@ -54,11 +54,12 @@
 <svelte:window on:mouseup={onMouseUp} on:mousemove={onMouseMove} />
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <section
   style="--index: {index}; --position-x: {`${top}px`}; --position-y: {`${left}px`}"
-  on:mousedown={changeFocus}
+  tabindex={index}
 >
-  <div on:mousedown={onMouseDown} role="toolbar" tabindex={index}>
+  <div class="window-titlebar" on:mousedown={onMouseDown}>
     <img src={$openWindows[index].icon} alt="Window icon" />
     <h2 class="unselectable bold">{$openWindows[index].title}</h2>
     <button on:click={minimiseWindow}>_</button>
@@ -79,6 +80,7 @@
     border-image-slice: 4;
     border-image-repeat: round;
     z-index: var(--index);
+    resize: auto;
   }
 
   section > div {
@@ -97,6 +99,7 @@
   h2 {
     font-size: 1rem;
     margin-left: 3px;
-    color: white;
+    /* color: white; */
+    --bold-color: white;
   }
 </style>
