@@ -1,34 +1,12 @@
 <script>
   export let index;
   import { openWindows } from "../stores.js";
+  import changeFocus from "$lib/ChangeFocus.js"
 
   export let left = $openWindows[index].position.x;
   export let top = $openWindows[index].position.y;
 
   let moving = false;
-
-  function changeFocus() {
-    openWindows.update((windows) => {
-      let highestZIndex = 0;
-      windows.forEach((window) => {
-        if (window.zIndex > highestZIndex) {
-          highestZIndex = window.zIndex;
-        }
-      });
-
-      windows.forEach((window, i) => {
-        if (i === index) {
-          if (window.zIndex !== highestZIndex) {
-            window.focused = true;
-            window.zIndex = highestZIndex + 1;
-          }
-        } else {
-          window.focused = false;
-        }
-      });
-      return windows;
-    });
-  }
 
   function onMouseDown() {
     moving = true;
@@ -71,7 +49,7 @@
 <section
   style="--z-index: {$openWindows[index].zIndex}; --position-x: {top}px; --position-y: {left}px"
   tabindex={index}
-  on:mousedown={changeFocus}
+  on:mousedown={changeFocus(index)}
 >
   <div class="window-titlebar {$openWindows[index].focused ? 'focused' : ''}" on:mousedown={onMouseDown} >
     <img src={$openWindows[index].icon} alt="Window icon" />

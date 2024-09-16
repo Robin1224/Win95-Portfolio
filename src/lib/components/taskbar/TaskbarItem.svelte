@@ -1,9 +1,14 @@
 <script>
   export let index;
+
   import { openWindows } from "$lib/stores.js";
+  import changeFocus from "$lib/ChangeFocus.js";
+
 </script>
 
-<div>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<div class="{$openWindows[index].focused ? 'focused' : ''}" on:mousedown={changeFocus(index)}>
   <img src={$openWindows[index].icon} alt="Window icon" />
   <span>{$openWindows[index].title}</span>
 </div>
@@ -17,11 +22,16 @@
     border-image-repeat: round;
     height: 2.4em;
     width: 100%;
+    /* max-width: 36rem; */
     display: flex;
     align-items: center;
     padding-right: 5px;
-    max-width: 10em;
+    max-width: 14em;
     margin-right: 0.3em;
+  }
+
+  .focused {
+    background-color: var(--window-titlebar);
   }
 
   img {
