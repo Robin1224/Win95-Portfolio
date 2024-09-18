@@ -31,7 +31,12 @@
   }
 
   .focused {
-    background-color: var(--window-titlebar);
+    background-color: var(--taskbar-active);
+    border-image: var(--path-border-taskbar-active-small);
+    border-style: solid;
+    border-width: 2px 4px 4px 2px;
+    border-image-slice: 2 4 4 2;
+    border-image-repeat: round;
   }
 
   img {

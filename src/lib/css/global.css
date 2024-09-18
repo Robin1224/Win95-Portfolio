@@ -4,14 +4,16 @@
   --window-accent: #808080;
   --window-unfocused: #7f787f;
   --window-titlebar: #000082;
+  --taskbar-active: #e5e5e5;
 
   --path-border-default: url(./borders/border-image.png);
   --path-border-taskbar: url(./borders/border-taskbar-item.png);
   --path-border-clock: url(./borders/border-clock.png);
-
+  
   --path-border-default-small: url(./borders/border-image-small.png);
   --path-border-taskbar-small: url(./borders/border-taskbar-item-small.png);
   --path-border-clock-small: url(./borders/border-clock-small.png);
+  --path-border-taskbar-active-small: url(./borders/border-taskbar-item-active-small.png);
 
   --bold-color: #000000;
 }

@@ -1,5 +1,8 @@
 import { writable } from "svelte/store";
+
 import TestWindow from "./components/windows/TestWindow.svelte";
+import VisiteKaartje from "./components/windows/VisiteKaartje.svelte";
+
 import htmlIcon from "./icons/html.png";
 import computerIcon from "./icons/computer.png";
 import cdIcon from "./icons/cd.png";
@@ -29,8 +32,8 @@ export const openWindows = writable([
   {
     id: 3,
     icon: cmdIcon,
-    component: TestWindow,
-    title: "Test Window3",
+    component: VisiteKaartje,
+    title: "Visitekaartje",
     visible: true,
     position: { x: 160, y: 160 },
     focused: true,

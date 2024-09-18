@@ -1,7 +1,7 @@
 <script>
   export let index;
   import { openWindows } from "../stores.js";
-  import changeFocus from "$lib/ChangeFocus.js"
+  import changeFocus from "$lib/ChangeFocus.js";
 
   export let left = $openWindows[index].position.x;
   export let top = $openWindows[index].position.y;
@@ -47,15 +47,23 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <section
-  style="--z-index: {$openWindows[index].zIndex}; --position-x: {top}px; --position-y: {left}px"
+  style="--z-index: {$openWindows[index]
+    .zIndex}; --position-x: {top}px; --position-y: {left}px"
   tabindex={index}
   on:mousedown={changeFocus(index)}
 >
-  <div class="window-titlebar {$openWindows[index].focused ? 'focused' : ''}" on:mousedown={onMouseDown} >
-    <img src={$openWindows[index].icon} alt="Window icon" />
-    <h2 class="unselectable bold">{$openWindows[index].title}</h2>
-    <button on:click={minimiseWindow}>_</button>
-    <button on:click={closeWindow}>x</button>
+  <div
+    class="titlebar {$openWindows[index].focused ? 'focused' : ''}"
+    on:mousedown={onMouseDown}
+  >
+    <div>
+      <img src={$openWindows[index].icon} alt="Window icon" />
+      <h2 class="unselectable bold">{$openWindows[index].title}</h2>
+    </div>
+    <div>
+      <button on:click={minimiseWindow}>_</button>
+      <button on:click={closeWindow}>x</button>
+    </div>
   </div>
   <slot></slot>
 </section>
@@ -72,14 +80,19 @@
     border-image-slice: 4;
     border-image-repeat: round;
     z-index: var(--z-index);
-    resize: auto;
   }
 
-  section > div {
+  .titlebar {
     display: flex;
     background-color: var(--window-unfocused);
     margin: 2px;
     height: 1.6em;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .titlebar > div {
+    display: flex;
     align-items: center;
   }
 
