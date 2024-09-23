@@ -16,6 +16,8 @@
   --path-border-taskbar-active-small: url(/borders/border-taskbar-item-active-small.png);
 
   --path-button-close: url(/buttons/window-close.png);
+  --path-button-maximise: url(/buttons/window-maximise.png);
+  --path-button-minimise: url(/buttons/window-minimise.png);
 
   --bold-color: #000000;
 }

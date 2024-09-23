@@ -27,14 +27,26 @@
     moving = false;
   }
 
-  const minimiseWindow = () => {
+  const minimiseHandler = () => {
     openWindows.update((windows) => {
       windows[index].visible = false;
       return windows;
     });
+
+    let highestVisibleWindow = 0;
+    let highestZIndex = 0;
+
+    $openWindows.forEach((window, i) => {
+      if (window.visible && window.zIndex > highestZIndex) {
+        highestZIndex = window.zIndex;
+        highestVisibleWindow = i;
+      }
+    });
+
+    changeFocus(highestVisibleWindow);
   };
 
-  const closeWindow = () => {
+  const closeHandler = () => {
     openWindows.update((windows) => {
       windows.splice(index, 1);
       return windows;
@@ -56,13 +68,14 @@
     class="titlebar {$openWindows[index].focused ? 'focused' : ''}"
     on:mousedown={onMouseDown}
   >
-    <div>
+    <div class="titlebar-title">
       <img src={$openWindows[index].icon} alt="Window icon" />
       <h2 class="unselectable bold">{$openWindows[index].title}</h2>
     </div>
-    <div>
-      <button on:click={minimiseWindow}>_</button>
-      <button class="close" on:click={closeWindow}></button>
+    <div class="titlebar-buttons">
+      <button class="minimise" on:click={minimiseHandler}></button>
+      <button class="maximise"></button>
+      <button class="close" on:click={closeHandler}></button>
     </div>
   </div>
   <slot></slot>
@@ -96,6 +109,10 @@
     align-items: center;
   }
 
+  .titlebar-title {
+    min-width: 10rem;
+  }
+
   .focused {
     background-color: var(--window-titlebar);
   }
@@ -116,13 +133,25 @@
     --bold-color: white;
   }
 
-  .close {
-    background-image: var(--path-button-close);
+  .titlebar-buttons > button{
     background-size: cover;
     width: 1.42rem;
     height: 1.25rem;
     /* transform: translateY(-0.5rem); */
     border: none;
+  }
+
+  .minimise {
+    background-image: var(--path-button-minimise);
+  }
+
+  .maximise {
+    background-image: var(--path-button-maximise);
+    margin-right: 0.1rem;
+  }
+
+  .close {
+    background-image: var(--path-button-close);
     margin-right: 0.1rem;
   }
 </style>
