@@ -11,6 +11,7 @@ export default function changeFocus(index) {
 
     windows.forEach((window, i) => {
       if (i === index) {
+        window.visible = true;
         if (window.zIndex !== highestZIndex) {
           window.focused = true;
           window.zIndex = highestZIndex + 1;

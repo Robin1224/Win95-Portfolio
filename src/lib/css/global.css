@@ -15,6 +15,8 @@
   --path-border-clock-small: url(./borders/border-clock-small.png);
   --path-border-taskbar-active-small: url(./borders/border-taskbar-item-active-small.png);
 
+  --path-button-close: url(./buttons/window-close.png);
+
   --bold-color: #000000;
 }
 

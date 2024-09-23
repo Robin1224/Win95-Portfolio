@@ -2,7 +2,7 @@
 <p>Hier komt mijn visitekaartje</p>
 
 <style>
-  h1 {
+  h3 {
     color: green;
   }
 </style>

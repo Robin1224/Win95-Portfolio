@@ -62,7 +62,7 @@
     </div>
     <div>
       <button on:click={minimiseWindow}>_</button>
-      <button on:click={closeWindow}>x</button>
+      <button class="close" on:click={closeWindow}></button>
     </div>
   </div>
   <slot></slot>
@@ -114,5 +114,15 @@
 
   .focused h2 {
     --bold-color: white;
+  }
+
+  .close {
+    background-image: var(--path-button-close);
+    background-size: cover;
+    width: 1.42rem;
+    height: 1.25rem;
+    /* transform: translateY(-0.5rem); */
+    border: none;
+    margin-right: 0.1rem;
   }
 </style>
