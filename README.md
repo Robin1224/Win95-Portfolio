@@ -1,38 +1,22 @@
-# create-svelte
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Robin1224/Win95-Portfolio">
+    <img src="https://win98icons.alexmeub.com/icons/png/windows-0.png" alt="Logo" width="80" height="80">
+  </a>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+<h3 align="center">Win95 Portfolio</h3>
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+  <p align="center">
+    A Windows 95 inspired portfolio website
+    <br />
+    <a href="fdnd-profile-card.vercel.app"><strong>Live link »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/users/Robin1224/projects/7">Project Board</a>
+    ·
+    <a href="https://github.com/Robin1224/Win95-Portfolio/issues/new">Report Bug</a>
+    ·
+    <a href="">Run locally</a>
+  </p>
+</div>
