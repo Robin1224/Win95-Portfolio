@@ -20,3 +20,16 @@
     <a href="">Run locally</a>
   </p>
 </div>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+![Page screenshot](https://github.com/user-attachments/assets/75bfc47a-12f5-4178-90de-748048931033)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+* [![Svelte][https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00]][https://svelte.dev/]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
