@@ -30,6 +30,6 @@
 
 ### Built With
 
-* [![Svelte][https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00]][https://svelte.dev/]
+* [![Svelte](https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00)][https://svelte.dev/]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
