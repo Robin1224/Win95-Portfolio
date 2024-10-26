@@ -26,6 +26,8 @@
 
 ![Page screenshot](https://github.com/user-attachments/assets/75bfc47a-12f5-4178-90de-748048931033)
 
+A portfolio website made in around 3 weeks as an assignment for my University course. Eventually - once I have more time to work on it - this will include my created work, and a sort of digital garden-type collection of notes and writings. For now only includes some window manipulation functionality and basic information about myself. You can move windows, minimise, and close them.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
