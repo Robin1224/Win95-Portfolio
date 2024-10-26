@@ -1,18 +1,20 @@
 import { writable } from "svelte/store";
 
-import TestWindow from "./components/windows/TestWindow.svelte";
+import Portrait from "./components/windows/Portrait.svelte";
 import VisiteKaartje from "./components/windows/VisiteKaartje.svelte";
 
 import htmlIcon from "./icons/html.png";
 import computerIcon from "./icons/computer.png";
 import cdIcon from "./icons/cd.png";
 import cmdIcon from "./icons/cmd.png";
+import imageIcon from "./icons/image.png";
+import notepadIcon from "./icons/notepad.png";
 
 export const openWindows = writable([
   {
     id: 1,
     icon: computerIcon,
-    component: TestWindow,
+    component: Portrait,
     title: "My Computer",
     visible: true,
     position: { x: 100, y: 100 },
@@ -21,9 +23,9 @@ export const openWindows = writable([
   },
   {
     id: 2,
-    icon: cdIcon,
-    component: TestWindow,
-    title: "CD Player",
+    icon: imageIcon,
+    component: Portrait,
+    title: "Portrait",
     visible: true,
     position: { x: 130, y: 130 },
     focused: false,
@@ -31,9 +33,9 @@ export const openWindows = writable([
   },
   {
     id: 3,
-    icon: cmdIcon,
+    icon: notepadIcon,
     component: VisiteKaartje,
-    title: "Visitekaartje",
+    title: "Notepad",
     visible: true,
     position: { x: 160, y: 160 },
     focused: true,
