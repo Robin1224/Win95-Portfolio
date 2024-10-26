@@ -1,6 +1,16 @@
-import { openWindows } from '$lib/stores';
+import { openWindows } from "$lib/stores";
 
 export default function changeFocus(index) {
+  if (index === -1) {
+    openWindows.update((windows) => {
+      windows.forEach((window) => {
+        window.focused = false;
+      });
+      return windows;
+    });
+    return;
+  }
+
   openWindows.update((windows) => {
     let highestZIndex = 0;
     windows.forEach((window) => {

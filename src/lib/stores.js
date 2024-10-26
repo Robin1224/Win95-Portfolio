@@ -13,9 +13,9 @@ import notepadIcon from "./icons/notepad.png";
 export const openWindows = writable([
   {
     id: 1,
-    icon: computerIcon,
+    icon: htmlIcon,
     component: Portrait,
-    title: "My Computer",
+    title: "We Love Web",
     visible: true,
     position: { x: 100, y: 100 },
     focused: false,

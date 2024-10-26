@@ -36,14 +36,19 @@
     let highestVisibleWindow = 0;
     let highestZIndex = 0;
 
-    $openWindows.forEach((window, i) => {
-      if (window.visible && window.zIndex > highestZIndex) {
-        highestZIndex = window.zIndex;
-        highestVisibleWindow = i;
-      }
-    });
+    if ($openWindows.filter((window) => window.visible).length === 0) {
+      changeFocus(-1);
+    } else {
+      console.log("test");
+      $openWindows.forEach((window, i) => {
+        if (window.visible && window.zIndex > highestZIndex) {
+          highestZIndex = window.zIndex;
+          highestVisibleWindow = i;
+        }
+      });
 
-    changeFocus(highestVisibleWindow);
+      changeFocus(highestVisibleWindow);
+    }
   };
 
   const closeHandler = () => {
@@ -133,7 +138,7 @@
     --bold-color: white;
   }
 
-  .titlebar-buttons > button{
+  .titlebar-buttons > button {
     background-size: cover;
     width: 1.42rem;
     height: 1.25rem;
