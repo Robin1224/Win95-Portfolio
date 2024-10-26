@@ -2,6 +2,7 @@ import { writable } from "svelte/store";
 
 import Portrait from "./components/windows/Portrait.svelte";
 import VisiteKaartje from "./components/windows/VisiteKaartje.svelte";
+import WeLoveWeb from "./components/windows/WeLoveWeb.svelte";
 
 import htmlIcon from "./icons/html.png";
 import computerIcon from "./icons/computer.png";
@@ -14,7 +15,7 @@ export const openWindows = writable([
   {
     id: 1,
     icon: htmlIcon,
-    component: Portrait,
+    component: WeLoveWeb,
     title: "We Love Web",
     visible: true,
     position: { x: 100, y: 100 },
