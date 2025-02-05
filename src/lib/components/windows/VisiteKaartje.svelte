@@ -4,7 +4,7 @@
     <p>23 - Amsterdam - any pronouns</p>
   </hgroup>
   <p>
-    Im Robin! I'm a 23 year old front-end development student at the University of Amsterdam. I have a lot of passion for design and creativity in general. In my free time I occasiionally play video games, and value spending time with my friends. I have a lot of experience with vanilla HTML, CSS and Javascript, and a decent amount of experience with NextJS, React and SvelteKit. Aside from this I'm also very passionate about art and fashion, and enjoy challenging gender norms in clothing and personal expression. I also have a passion for all things retro, and own a record player and collection, a polaroid camera and an old film camera that I love to use.
+    Hello, I'm Robin! I'm a 23 year old front-end development student at the University of Amsterdam. I'm currently in my final year of college, and I'm looking for an internship as a front-end developer. I'm a driven creative developer with a passion for creative and bold designs. I'm very interested in motion design, 3D graphics and creating pleasurable UI and am keen to hone my skills in these subjects. As a developer I work with a focus on accessible, performant, and progressively enhanced projects. I'm an experienced Javascript developer, and have experience working with NextJS, SvelteKit and express. My ultimate goal is to use the web as an art medium, and create engaging artistic experiences that users resonate with, which I'm getting closer to every day. <br /> <br /> PS: I also LOVE music, and I'm always looking for new recommendations!
   </p>
 </div>
 
